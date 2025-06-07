@@ -7,8 +7,18 @@ sources:
     schema: jaffle_shop
     tables:
       - name: customers
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
         description: One record per customer.
       - name: orders
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
         description: One record per order. Includes cancelled and deleted orders.
   - name: stripe
     description: This is a replica of the Postgres database STRIPE used by our app
